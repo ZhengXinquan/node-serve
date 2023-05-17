@@ -1,0 +1,107 @@
+{
+  "apps": [
+    {
+      "name": "nsq",
+      "script": "serve/8081.js",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss",
+      "error_file": "logs/nsq-err.log",
+      "out_file": "logs/nsq-out.log",
+      "instances": 1,
+      "min_uptime": "200s",
+      "max_restarts": 10,
+      "max_memory_restart": "100M",
+      "merge_logs": true,
+      "exec_interpreter": "node",
+      "exec_mode": "cluster_mode",
+      "autorestart": true,
+      "vizion": false,
+      "env": {
+        "NODE_ENV": "pro"
+      }
+    },
+    {
+      "name": "account",
+      "script": "serve/8082.js",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss",
+      "error_file": "logs/account-err.log",
+      "out_file": "logs/account-out.log",
+      "instances": 1,
+      "min_uptime": "200s",
+      "max_restarts": 10,
+      "max_memory_restart": "100M",
+      "merge_logs": true,
+      "exec_interpreter": "node",
+      "exec_mode": "cluster_mode",
+      "autorestart": true,
+      "vizion": false,
+      "env": {
+        "NODE_ENV": "pro"
+      }
+    },
+    {
+      "name": "job-temp",
+      "script": "serve/8083.js",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss",
+      "error_file": "logs/jobTemp-err.log",
+      "out_file": "logs/jobTemp-out.log",
+      "instances": 1,
+      "min_uptime": "200s",
+      "max_restarts": 10,
+      "max_memory_restart": "100M",
+      "merge_logs": true,
+      "exec_interpreter": "node",
+      "exec_mode": "cluster_mode",
+      "autorestart": true,
+      "vizion": false,
+      "env": {
+        "NODE_ENV": "pro"
+      }
+    },
+    {
+      "name": "api",
+      "script": "C:\\project\\api\\index.js",
+      "error_file": "./logs/api-err.log",
+      "out_file": "./logs/api-out.log",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss",
+      "instances": 1,
+      "min_uptime": "200s",
+      "max_restarts": 10,
+      "max_memory_restart": "100M",
+      "watch": [
+        "C:\\project\\api\\api",
+        "C:\\project\\api\\class",
+        "C:\\project\\api\\config",
+        "C:\\project\\api\\utils",
+        "C:\\project\\api\\index.js"
+      ],
+      "merge_logs": true,
+      "exec_interpreter": "node",
+      "exec_mode": "cluster_mode",
+      "autorestart": true,
+      "vizion": false,
+      "env": {
+        "NODE_ENV": "pro"
+      }
+    },
+    {
+      "name": "chart",
+      "script": "C:\\project\\chart\\index.js",
+      "error_file": "./logs/chart-err.log",
+      "out_file": "./logs/chart-out.log",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss",
+      "instances": 1,
+      "min_uptime": "200s",
+      "max_restarts": 10,
+      "max_memory_restart": "100M",
+      "watch": ["C:\\project\\chart\\index.js"],
+      "merge_logs": true,
+      "exec_interpreter": "node",
+      "exec_mode": "cluster_mode",
+      "autorestart": true,
+      "vizion": false,
+      "env": {
+        "NODE_ENV": "pro"
+      }
+    }
+  ]
+}

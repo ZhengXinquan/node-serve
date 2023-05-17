@@ -1,0 +1,29 @@
+<html>
+  <title>test</title>
+
+  <body>
+    <script>
+      const data = {
+        info: 'toLogin',
+    user: 'noslover',
+    pwd: '123qwe',
+    check: 'false',
+      }
+      fetch('/api/zz_services/getUserInfo.php', {
+        method: 'POST', // or 'PUT'
+        body: JSON.stringify(data), // data can be `string` or {object}!
+        headers: new Headers({
+          'Content-Type': 'application/json',
+        }),
+      })
+        .then(res => res.text())
+        .catch(error => {
+          console.error('- Error:', error);
+        })
+        .then(response => {
+          console.log('- Success:', response);
+          document.write(response);
+        });
+    </script>
+  </body>
+</html>
